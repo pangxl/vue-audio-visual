@@ -105,6 +105,10 @@ function drawProgress(ctx: CanvasRenderingContext2D, audio: HTMLAudioElement, p:
 }
 
 function drawPlaytime(ctx: CanvasRenderingContext2D, audio: HTMLAudioElement, p: Circle){
+  if (!p.playtime) {
+    return
+  }
+  
   const { currentTime } = audio
 
   const m = Math.floor(currentTime / 60)
